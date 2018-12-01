@@ -1,0 +1,27 @@
+.scale-body{
+    width:150px;
+    height: 13px;
+    background: #CECECE;
+}
+.scale-progress {
+    height: 7px;
+    background: #0099CC;
+    margin: 3px;
+    position: relative;
+    top: 3px;
+}
+.progress-bar {
+    height: auto;
+    display: inline-block;
+    position:relative;
+    top:30px;
+}
+.value-indicator{
+    position: relative;
+    width:25px;
+}
+.value-indicator p{
+    margin:0;
+    height: 14px;
+    text-align: center;
+}
