@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
-import ProgressBar from './progressBar'
+import ProgressBlock from './progressBlock'
 import '../style/App.css';
 
 export default class App extends Component {
@@ -67,25 +67,16 @@ export default class App extends Component {
   render() {
       const{progress,hideInf}=this.state;
       const informValue=Math.round((progress.target-progress.currentValue) * 10) / 10;
-      const indicatorClass="indicator-target "+ (hideInf ? "green" : "gray");
     return (
         <div className="main">
             <div className="caption"> Target Indicator Demo</div>
             <div className="indicator-area">
                 <div className="indicator-block" >
-                    <div className="progress-block">
-                        <span>Reached:</span>
-                        <span>
-                            <ProgressBar
-                                progress={progress}
-                            />
-                        </span>
-                        <span className={indicatorClass}>
-                            <p>Target</p>
-                            <p>${progress.target}</p>
-                        </span>
-                    </div>
-                    <div className="inform" hidden={false}>
+                    <ProgressBlock
+                        progress={progress}
+                        hideInf={hideInf}
+                    />
+                    <div className="inform" hidden={hideInf}>
                         <span>i</span>
                         You need ${informValue} more to reach you target.
                     </div>
